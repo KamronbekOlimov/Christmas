@@ -12,8 +12,8 @@ function Contact() {
                 <button>Send Message</button>
             </form>
             </div>
-            <img className='desktop' src="./public/letter.png" alt="" />
-            <img className='mobile' src="./public/letterMobile.png" alt="" />
+            <img className='desktop' src="/letter.png" alt="" />
+            <img className='mobile' src="/letterMobile.png" alt="" />
         </div>
     </section>
     </>

@@ -7,8 +7,8 @@ import Gifts from './pages/gifts/Gifts'
 import New from './pages/new/New'
 function App() {
   const [changeMode, setChangeMode] = useState(false)
-  const [moon, setMoon] = useState(`./public/moon.svg`)
-  const [menu, setMenu] = useState(`./public/menu.svg`)
+  const [moon, setMoon] = useState(`/moon.svg`)
+  const [menu, setMenu] = useState(`/menu.svg`)
   const [changeMenu, setChangeMenu] = useState(false)
   const activeMenu = () => {
     setChangeMenu(!changeMenu)
@@ -19,7 +19,7 @@ function App() {
     <header>
       <nav>
         <div className="container">
-          <a className='logo' href=""><img src="./public/logo.svg" alt="Christmas logo icon" /><span>Christmas</span></a>
+          <a className='logo' href=""><img src="/logo.svg" alt="Christmas logo icon" /><span>Christmas</span></a>
           <ul className="links">
             <li>
               <a href="">Home</a>
@@ -39,21 +39,21 @@ function App() {
             <button onClick={()=>{
               setChangeMode(!changeMode)
               if (changeMode == true) {
-                setMoon(`./public/moon.svg`)
-                setMenu('./public/menu.svg')
+                setMoon(`/moon.svg`)
+                setMenu('/menu.svg')
               }else{
-                setMoon('./public/darkMoon.svg')
-                setMenu('./public/darkMenu.svg')
+                setMoon('/darkMoon.svg')
+                setMenu('/darkMenu.svg')
               }
             }}><img src={moon} alt="" /></button>
             <button onClick={()=>activeMenu()} className='mobileMenu'><img src={menu} alt="" /></button>
           </ul>
         </div>
         <div className={changeMenu?`menu active`:'menu'}>
-          <img className='toys' src="./public/toys.png" alt="" />
+          <img className='toys' src="/toys.png" alt="" />
           <button onClick={()=>activeMenu()} className='exitMenu'>
-            <img className='exitImg' src="./public/xmark.svg" alt="" />
-            <img className='exitImgMobile' src="./public/xmarkDark.svg" alt="" />
+            <img className='exitImg' src="/xmark.svg" alt="" />
+            <img className='exitImgMobile' src="/xmarkDark.svg" alt="" />
           </button>
           <div className="container">
           <ul className="menuLinks">
@@ -78,8 +78,8 @@ function App() {
       </nav>
       <div className="hero">
         <div className="container">
-          <img className='mainHeroImg' src="./public/heroImg.png" alt="" />
-          <img className='mobileHeroImg' src="./public/mobileHeroImg.png" alt="" />
+          <img className='mainHeroImg' src="/heroImg.png" alt="" />
+          <img className='mobileHeroImg' src="/mobileHeroImg.png" alt="" />
           <div className="heroInfo">
             <h1>Merry Christmas and Happy New Year!</h1>
             <p>Christmas and a new year is about to begin, all good wishes and successes.</p>
