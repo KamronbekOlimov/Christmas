@@ -3,14 +3,14 @@ function Footer() {
   return (
     <>
     <footer>
-    <img className='orangeMobile' src="/public/orangeToyMobile.png" alt="" />
+    <img className='orangeMobile' src="./public/orangeToyMobile.png" alt="" />
         <div className="container">
-            <img className='greenToy' src="/public/greenToy.png" alt="" />
-            <img className='orangeToy' src="/public/orangeToy.png" alt="" />
-            <img className='greenMobile' src="/public/greenToyMobile.png" alt="" />
+            <img className='greenToy' src="./public/greenToy.png" alt="" />
+            <img className='orangeToy' src="./public/orangeToy.png" alt="" />
+            <img className='greenMobile' src="./public/greenToyMobile.png" alt="" />
             <div className='footer'>
             <ul className="footerLinks">
-                <a className='logo' href=""><img src="/public/logo.svg" alt="" /><span>Christmas</span></a>
+                <a className='logo' href=""><img src="./public/logo.svg" alt="" /><span>Christmas</span></a>
                 <p>This Christmas give a lot of love</p>
             </ul>
             <ul className="footerLinks">
