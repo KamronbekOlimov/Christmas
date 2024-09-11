@@ -1,0 +1,108 @@
+#new{
+    padding: 50px 0px;
+}
+#new .container{
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+}
+#new h2{
+    color: #282525;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 36px;
+    text-align: center;
+}
+.body.dark #new h2{
+    color: #F3F2F2;
+}
+.boxes{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+.box{
+    padding: 15px;
+    position: relative;
+    width: 230px;
+    height: 268px;
+    box-shadow: 0px 0px 10px 3px #C4C4C4;
+    border-radius: 12px;
+    overflow: hidden;
+    row-gap: 30px;
+    text-align: center;
+}
+.body.dark .box{
+    background-color: #2F2223;
+    box-shadow: none;
+}
+.box .redCircle{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background-color: #DC3845;
+    top: -70px;
+    left: -10px;
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.box .redCircle img{
+    margin-top: 70px;
+}
+.boxInfo{
+    margin-top: 180px;
+}
+.box h3{
+    color: #282525;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+}
+.body.dark .box h3{
+    color: #F3F2F2;
+}
+.box p{
+    color: #5D5656;
+}
+.body.dark .box p{
+    color: #C2BDBD;
+}
+.box button{
+    position: absolute;
+    padding: 8px;
+    border-radius: 4px;
+    border: none;
+    background-color: #DC3845;
+    bottom: 0;
+    right: 0;
+    cursor: pointer;
+}
+#new .tfr{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.tfr span{
+    border-radius: 50%;
+    cursor: pointer;
+}
+.tfr span:nth-child(1){
+    background-color: #DC3845;
+    width: 7px;
+    height: 7px;
+}
+.tfr span:nth-child(2){
+    width: 5px;
+    height: 5px;
+    background-color: #5D565680;
+}
+.tfr span:nth-child(3){
+    width: 3px;
+    height: 3px;
+    background-color: #5D565680;
+}
