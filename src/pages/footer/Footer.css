@@ -46,7 +46,7 @@ footer .footerLinks{
 .body.dark .footerLinks a{
     color: #C2BDBD;
 }
-.footerLinks button{
+.footerLinks .playMarket{
     padding: 10px 0px;
     width: 120px;
     background-color: #000000;
@@ -56,6 +56,9 @@ footer .footerLinks{
     font-size: 14px;
     font-weight: 500;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .hash{
     text-align: center;

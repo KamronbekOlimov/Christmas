@@ -75,6 +75,7 @@ function App() {
           </ul>
           </div>
         </div>
+        <hr />
       </nav>
       <div className="hero">
         <div className="container">
