@@ -21,6 +21,7 @@
   align-items: center;
   justify-content: center;
   gap: 40px;
+  flex-wrap: wrap;
 }
 .box{
   padding: 15px;
@@ -93,16 +94,26 @@
 }
 .tfr span:nth-child(1){
   background-color: #DC3845;
-  width: 7px;
-  height: 7px;
+  width: 9px;
+  height: 9px;
 }
 .tfr span:nth-child(2){
+  width: 7px;
+  height: 7px;
+  background-color: #5D565680;
+}
+.tfr span:nth-child(3){
   width: 5px;
   height: 5px;
   background-color: #5D565680;
 }
-.tfr span:nth-child(3){
+.tfr span:nth-child(4){
   width: 3px;
   height: 3px;
   background-color: #5D565680;
+}
+@media (max-width: 400px){
+  .box:nth-child(1), .box:nth-child(2), .box:nth-child(3), .box:nth-child(4){
+    display: block;
+  }
 }
