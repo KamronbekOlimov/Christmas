@@ -39,8 +39,8 @@ function Footer() {
             </ul>
             <ul className="footerLinks">
                 <h4>Available On</h4>
-                <a className='playMarket' href='https://play.google.com'>Google Play</a>
-                <a className='playMarket' href='https://www.apple.com'>App Store</a>
+                <a target='_blank' className='playMarket' href='https://play.google.com'>Google Play</a>
+                <a target='_blank' className='playMarket' href='https://www.apple.com'>App Store</a>
             </ul>
             </div>
             <p className='hash'>@ Bedimcode. All rigths reserved</p>

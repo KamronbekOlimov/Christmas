@@ -62,7 +62,7 @@ nav .container{
   display: none;
 }
 .hero{
-  padding-top: 106px;
+  padding-top: 156px;
   padding-bottom: 50px;
 }
 .hero .container{
@@ -184,6 +184,9 @@ nav .container{
   }
   .mobileMenu{
     display: block;
+  }
+  .hero{
+    padding-top: 106px;
   }
   .hero .container{
     flex-direction: column;

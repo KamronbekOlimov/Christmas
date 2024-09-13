@@ -13,14 +13,16 @@
     color: #F3F2F2;
 }
 .cards{
-    gap: 60px;
+    /* gap: 60px;
     display: flex;
     align-items: center;
     justify-content: start;
-    flex-wrap: wrap;
-    /* margin: 0 auto; */
-    /* display: grid;
-    grid-template-columns: repeat(3, 1fr); */
+    flex-wrap: wrap; */
+    width: 73%;
+    row-gap: 30px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
 }
 .card{
     padding: 25px;
@@ -66,8 +68,8 @@
 }
 @media(max-width:400px){
     .cards{
-        gap: 25px;
-        justify-content: space-between;
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
     }
     .card{
         width: 144px;
