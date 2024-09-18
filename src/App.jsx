@@ -2,101 +2,26 @@ import { useState } from 'react'
 import './App.css'
 import Celebrate from './pages/celebrate/Celebrate'
 import Contact from './pages/contact/Contact'
-import Footer from './pages/footer/Footer'
-import Gifts from './pages/gifts/Gifts'
+import Footer from './components/footer/Footer'
+import Gift from './pages/gift/Gift'
 import New from './pages/new/New'
+import Home from './pages/home/Home'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Navbar from './components/navbar/Navbar'
 function App() {
-  const [changeMode, setChangeMode] = useState(false)
-  const [moon, setMoon] = useState(`/moon.svg`)
-  const [menu, setMenu] = useState(`/menu.svg`)
-  const [changeMenu, setChangeMenu] = useState(false)
-  const activeMenu = () => {
-    setChangeMenu(!changeMenu)
-  }
   return (
     <>
-    <div className={changeMode?`body dark`:'body'}>
-    <header>
-      <nav>
-        <div className="container">
-          <a className='logo' href=""><img src="/logo.svg" alt="Christmas logo icon" /><span>Christmas</span></a>
-          <ul className="links">
-            <li>
-              <a href="">Home</a>
-            </li>
-            <li>
-              <a href="">Celebrate</a>
-            </li>
-            <li>
-              <a href="">Gifts</a>
-            </li>
-            <li>
-              <a href="">New</a>
-            </li>
-            <li>
-              <a href="">Contact</a>
-            </li>
-            <button onClick={()=>{
-              setChangeMode(!changeMode)
-              if (changeMode == true) {
-                setMoon(`/moon.svg`)
-                setMenu('/menu.svg')
-              }else{
-                setMoon('/darkMoon.svg')
-                setMenu('/darkMenu.svg')
-              }
-            }}><img src={moon} alt="" /></button>
-            <button onClick={()=>activeMenu()} className='mobileMenu'><img src={menu} alt="" /></button>
-          </ul>
-        </div>
-        <div className={changeMenu?`menu active`:'menu'}>
-          <img className='toys' src="/toys.png" alt="" />
-          <button onClick={()=>activeMenu()} className='exitMenu'>
-            <img className='exitImg' src="/xmark.svg" alt="" />
-            <img className='exitImgMobile' src="/xmarkDark.svg" alt="" />
-          </button>
-          <div className="container">
-          <ul className="menuLinks">
-            <li>
-              <a href="">Home</a>
-            </li>
-            <li>
-              <a href="">Celebrate</a>
-            </li>
-            <li>
-              <a href="">Gifts</a>
-            </li>
-            <li>
-              <a href="">New</a>
-            </li>
-            <li>
-              <a href="">Contact</a>
-            </li>
-          </ul>
-          </div>
-        </div>
-        <hr />
-      </nav>
-      <div className="hero">
-        <div className="container">
-          <img className='mainHeroImg' src="/heroImg.png" alt="" />
-          <img className='mobileHeroImg' src="/mobileHeroImg.png" alt="" />
-          <div className="heroInfo">
-            <h1>Merry Christmas and Happy New Year!</h1>
-            <p>Christmas and a new year is about to begin, all good wishes and successes.</p>
-            <button>Get Started</button>
-          </div>
-        </div>
-      </div>
-    </header>
-    <main>
-      <Celebrate />
-      <Gifts />
-      <New />
-      <Contact />
-    </main>
-    <Footer />
-    </div>
+    <BrowserRouter>
+    <Navbar/>
+    <Routes>
+      <Route path='/' element={<Home/>}/>
+      <Route path='/celebrate' element={<Celebrate/>}/>
+      <Route path='/gift' element={<Gift/>}/>
+      <Route path='/new' element={<New/>}/>
+      <Route path='/contact' element={<Contact/>}/>
+    </Routes>
+    <Footer/>
+    </BrowserRouter>
     </>
   )
 }

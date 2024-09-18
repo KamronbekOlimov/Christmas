@@ -13,11 +13,6 @@
     color: #F3F2F2;
 }
 .cards{
-    /* gap: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    flex-wrap: wrap; */
     width: 73%;
     row-gap: 30px;
     margin: 0 auto;

@@ -1,6 +1,6 @@
 import { useState } from "react";
-import "./Gifts.css";
-function Gifts() {
+import "./Gift.css";
+function Gift() {
   const [gifts, setGifts] = useState([
     {
       imgDesk: "/gingerBread.png",
@@ -57,4 +57,4 @@ function Gifts() {
     </>
   );
 }
-export default Gifts;
+export default Gift;
