@@ -1,9 +1,7 @@
 import './Contact.css'
-
 function Contact() {
   return (
-    <>
-    <section id='contact'>
+    <div id='contact'>
         <div className="container">
             <div className="contactForm">
             <h2>Send Good Wishes!</h2>
@@ -15,9 +13,7 @@ function Contact() {
             <img className='desktop' src="/letter.png" alt="" />
             <img className='mobile' src="/letterMobile.png" alt="" />
         </div>
-    </section>
-    </>
+    </div>
   )
 }
-
 export default Contact

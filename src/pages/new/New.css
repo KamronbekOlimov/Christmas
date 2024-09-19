@@ -19,7 +19,7 @@
 .boxes{
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 40px;
   flex-wrap: wrap;
 }
@@ -74,13 +74,18 @@
 }
 .box button{
   position: absolute;
-  padding: 8px;
+  padding: 8px 10px;
   border-radius: 4px;
   border: none;
   background-color: #DC3845;
   bottom: 0;
   right: 0;
   cursor: pointer;
+  color: #FFFFFF;
+  font-size: 20px;
+}
+.box button .fa-heart{
+  color: #FFFFFF;
 }
 #new .tfr{
   display: flex;
@@ -113,7 +118,7 @@
   background-color: #5D565680;
 }
 @media (max-width: 400px){
-  .box:nth-child(1), .box:nth-child(2), .box:nth-child(3), .box:nth-child(4){
-    display: block;
+  .boxes{
+    justify-content: center;
   }
 }

@@ -1,7 +1,7 @@
 import "./Home.css";
 function Home() {
   return (
-    <>
+    <div className="hero">
       <div className="container">
         <img className="mainHeroImg" src="/heroImg.png" alt="" />
         <img className="mobileHeroImg" src="/mobileHeroImg.png" alt="" />
@@ -14,7 +14,7 @@ function Home() {
           <button>Get Started</button>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 export default Home;

@@ -1,59 +1,59 @@
-import { NavLink } from 'react-router-dom'
-import './Navbar.css'
-function Navbar() {
+import { NavLink } from "react-router-dom";
+import "./Navbar.css";
+function Navbar({ setMode, moon, menu, changeMenu, activeMenu, menuExit }) {
   return (
     <nav>
-        <div className="container">
-          <a className='logo' href=""></a>
-          <NavLink to={'/'} className={'logo'}><img src="/logo.svg" alt="Christmas logo icon" /><span>Christmas</span></NavLink>
-          <ul className="links">
-            <li>
-              <NavLink to={'/'}>Home</NavLink>
-            </li>
-            <li>
-              <NavLink to={'/celebrate'}>Celebrate</NavLink>
-            </li>
-            <li>
-              <NavLink to={'/gift'}>Gift</NavLink>
-            </li>
-            <li>
-              <NavLink to={'/new'}>New</NavLink>
-            </li>
-            <li>
-              <NavLink to={'/contact'}>Contact</NavLink>
-            </li>
-            <button><img src='/moon.svg' alt="" /></button>
-            <button className='mobileMenu'><img src='/moon.svg' alt="" /></button>
-          </ul>
-        </div>
-        <div>
-          <img className='toys' src="/toys.png" alt="" />
-          <button className='exitMenu'>
-            <img className='exitImg' src="/xmark.svg" alt="" />
-            <img className='exitImgMobile' src="/xmarkDark.svg" alt="" />
+      <div className="container">
+        <NavLink to={"/"} className={"logo"}>
+          <img src="/logo.svg" alt="Christmas logo icon" />
+          <span>Christmas</span>
+        </NavLink>
+        <ul className="links">
+          <li>
+            <NavLink to={"/"}>Home</NavLink>
+          </li>
+          <li>
+            <NavLink to={"/celebrate"}>Celebrate</NavLink>
+          </li>
+          <li>
+            <NavLink to={"/gift"}>Gift</NavLink>
+          </li>
+          <li>
+            <NavLink to={"/new"}>New</NavLink>
+          </li>
+          <li>
+            <NavLink to={"/contact"}>Contact</NavLink>
+          </li>
+          <button onClick={() => setMode()}>
+            <img src={moon} alt="" />
           </button>
-          <div className="container">
-          <ul className="menuLinks">
-            <li>
-              <a href="">Home</a>
-            </li>
-            <li>
-              <a href="">Celebrate</a>
-            </li>
-            <li>
-              <a href="">Gifts</a>
-            </li>
-            <li>
-              <a href="">New</a>
-            </li>
-            <li>
-              <a href="">Contact</a>
-            </li>
-          </ul>
-          </div>
-        </div>
-        <hr />
-      </nav>
-  )
+          <button onClick={()=>changeMenu()} className="menubtn">
+            <img src={menu} alt="" />
+          </button>
+        </ul>
+      </div>
+      <div className={activeMenu?'menuBar':'menuBar active'}>
+        <img className="toys" src="/toys.png" alt="" />
+        <button onClick={()=>changeMenu()} className="exitMenu"><img src={menuExit} alt="" /></button>
+        <ul className="menuLinks">
+          <li>
+            <NavLink to={"/"}>Home</NavLink>
+          </li>
+          <li>
+            <NavLink to={"/celebrate"}>Celebrate</NavLink>
+          </li>
+          <li>
+            <NavLink to={"/gift"}>Gift</NavLink>
+          </li>
+          <li>
+            <NavLink to={"/new"}>New</NavLink>
+          </li>
+          <li>
+            <NavLink to={"/contact"}>Contact</NavLink>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  );
 }
-export default Navbar
+export default Navbar;

@@ -1,31 +1,8 @@
 import { useState } from 'react'
 import './New.css'
-function New() {
-    const [news, setNews] = useState([
-        {
-            img: '/christmasWreath.png',
-            price: 18,
-            name: 'Christmas Wreath',
-        },
-        {
-            img: '/reindeer.png',
-            price: 95,
-            name: 'Reindeer',
-        },
-        {
-            img: '/snowGlobe.png',
-            price: 20,
-            name: 'Snow globe',
-        },
-        {
-            img: '/sledge.png',
-            price: 75,
-            name: 'Sledge',
-        },
-    ])
+function New({news, changeHeartNew}) {
   return (
-    <>
-    <section id='new'>
+    <div id='new'>
         <div className="container">
             <h2>New Gifts</h2>
             <div className="boxes">
@@ -39,7 +16,7 @@ function New() {
                             <div className="boxInfo">
                                 <h3>${news.price}</h3>
                                 <p>{news.name}</p>
-                                <button><img src="/whiteHeart.svg" alt="" /></button>
+                                <button onClick={()=>changeHeartNew(news.id)}><i className={news.liked?'fa-solid fa-heart':'fa-regular fa-heart'}></i></button>
                             </div>
                         </div>
                         )
@@ -53,8 +30,7 @@ function New() {
                 <span></span>
             </div>
         </div>
-    </section>
-    </>
+    </div>
   )
 }
 export default New

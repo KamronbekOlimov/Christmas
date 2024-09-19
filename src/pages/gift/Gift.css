@@ -13,11 +13,11 @@
     color: #F3F2F2;
 }
 .cards{
-    width: 73%;
-    row-gap: 30px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 50px;
 }
 .card{
     padding: 25px;
@@ -54,17 +54,22 @@
 }
 .card .heart{
     position: absolute;
-    top: 25px;
-    right: 25px;
+    background-color: transparent;
+    border: none;
+    top: 20px;
+    right: 20px;
     cursor: pointer;
+    font-size: 20px;
+}
+.card .heart .fa-heart{
+    color: #DC3845;
 }
 .mobile{
     display: none;
 }
 @media(max-width:400px){
     .cards{
-        grid-template-columns: repeat(2, 1fr);
-        width: 100%;
+        row-gap: 30px;
     }
     .card{
         width: 144px;

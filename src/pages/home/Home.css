@@ -1,6 +1,5 @@
 .hero {
-  padding-top: 156px;
-  padding-bottom: 50px;
+  padding: 50px 0px;
 }
 .hero .container {
   display: flex;
@@ -45,84 +44,7 @@
 .mobileHeroImg {
   display: none;
 }
-.menu {
-  position: fixed;
-  top: 56px;
-  width: 100%;
-  text-align: center;
-  background-color: #ffffff;
-  border-radius: 0px 0px 30px 30px;
-  z-index: 10;
-  transform: scaleY(0);
-  padding: 50px 0px;
-  transition: all 0.2s ease;
-  transform-origin: top;
-  border-bottom: 1px solid #c2bdbd;
-}
-.menu.active {
-  transform: scaleY(1);
-}
-.body.dark .menu {
-  background-color: #251819;
-}
-.exitMenu,
-.toys {
-  position: absolute;
-}
-.exitMenu {
-  right: 10px;
-  top: 10px;
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-  padding: 10px;
-}
-.exitImgMobile {
-  display: none;
-}
-.body.dark .exitImgMobile {
-  display: block;
-}
-.body.dark .exitImg {
-  display: none;
-}
-.toys {
-  left: 0;
-  top: 0;
-}
-.menu .container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-.menu .menuLinks {
-  display: flex;
-  flex-direction: column;
-  row-gap: 12px;
-}
-.menuLinks a {
-  font-size: 15px;
-  font-weight: 500;
-  line-height: 22.5px;
-  color: #000000;
-}
-.body.dark .menu a {
-  color: #ffffff;
-}
 @media (max-width: 400px) {
-  nav {
-    padding: 16px 0px;
-  }
-  .links {
-    gap: 23px;
-  }
-  .links li {
-    display: none;
-  }
-  .mobileMenu {
-    display: block;
-  }
   .hero {
     padding-top: 106px;
   }
