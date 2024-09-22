@@ -19,14 +19,6 @@ function App() {
       id: Math.floor(Math.random() * 9999),
     },
     {
-      imgDesk: "/santaClausHat.png",
-      imgMbl: "/clausHatMobile.png",
-      price: 22,
-      name: "Santa Claus Hat",
-      liked: false, 
-      id: Math.floor(Math.random() * 9999),
-    },
-    {
       imgDesk: "/candyStick.png",
       imgMbl: "/stickMobile.png",
       price: 12,
@@ -103,55 +95,19 @@ function App() {
   const changeMenu = () => {
     setActiveMenu(!activeMenu);
   };
-  const changeHeartGift = (id) => {
-    const updatedGifts = gifts.map((gift) =>
-      gift.id === id ? { ...gift, liked: !gift.liked } : gift
-    );
-    setGifts(updatedGifts);
-    const likedGift = updatedGifts.find((gift) => gift.id == id && gift.liked);
-    if (likedGift) {
-      setLikeGifts([...likeGifts, likedGift]);
-    } else {
-      setLikeGifts(likeGifts.filter((gift) => gift.id !== id));
-    }
-  };
-  const changeHeartNew = (id) => {
-    const updatedNews = news.map((item) =>
-      item.id === id ? { ...item, liked: !item.liked } : item
-    );
-    setNews(updatedNews);
-
-    const likedNew = updatedNews.find((item) => item.id === id && item.liked);
-    if (likedNew) {
-      setLikeNew([...likeNew, likedNew]);
-    } else {
-      setLikeNew(likeNew.filter((item) => item.id !== id));
-    }
-  };
+  const giftLike = (index) => {
+    
+  }
   return (
     <div className={changeMode ? "body" : "body dark"}>
       <BrowserRouter>
-        <Navbar
-          setMode={setMode}
-          moon={moon}
-          menu={menu}
-          changeMenu={changeMenu}
-          activeMenu={activeMenu}
-          menuExit={menuExit}
-        />
+        <Navbar setMode={setMode} moon={moon} menu={menu} changeMenu={changeMenu} activeMenu={activeMenu}
+          menuExit={menuExit}/>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/celebrate" element={<Celebrate />} />
-          <Route
-            path="/gift"
-            element={
-              <Gift
-                gifts={gifts}
-                changeHeartGift={changeHeartGift}
-              />
-            }
-          />
-          <Route path="/new" element={<New news={news} changeHeartNew={changeHeartNew}/>} />
+          <Route path="/gift" element={<Gift gifts={gifts} giftLike={giftLike}/>}/>
+          <Route path="/new" element={<New news={news}/>} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
         <Footer />

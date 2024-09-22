@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './New.css'
-function New({news, changeHeartNew}) {
+function New({news}) {
   return (
     <div id='new'>
         <div className="container">
@@ -16,7 +16,7 @@ function New({news, changeHeartNew}) {
                             <div className="boxInfo">
                                 <h3>${news.price}</h3>
                                 <p>{news.name}</p>
-                                <button onClick={()=>changeHeartNew(news.id)}><i className={news.liked?'fa-solid fa-heart':'fa-regular fa-heart'}></i></button>
+                                <button><i className='fa-regular fa-heart'></i></button>
                             </div>
                         </div>
                         )

@@ -3,6 +3,7 @@ nav {
   width: 100%;
   background-color: #ffffff;
   position: relative;
+  border-bottom: 1px solid #cecbcc9c;
 }
 .menuBar{
   width: 100%;
