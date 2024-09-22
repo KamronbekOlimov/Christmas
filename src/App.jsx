@@ -96,7 +96,14 @@ function App() {
     setActiveMenu(!activeMenu);
   };
   const giftLike = (index) => {
-    
+    const updateGifts = [...gifts]
+    updateGifts[index].liked = !updateGifts[index].liked
+    setGifts(updateGifts)
+  }
+  const newLike = (index) => {
+    const updateNews = [...news]
+    updateNews[index].liked = !updateNews[index].liked
+    setNews(updateNews)
   }
   return (
     <div className={changeMode ? "body" : "body dark"}>
@@ -107,7 +114,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/celebrate" element={<Celebrate />} />
           <Route path="/gift" element={<Gift gifts={gifts} giftLike={giftLike}/>}/>
-          <Route path="/new" element={<New news={news}/>} />
+          <Route path="/new" element={<New news={news} newLike={newLike}/>} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
         <Footer />

@@ -1,22 +1,22 @@
 import { useState } from 'react'
 import './New.css'
-function New({news}) {
+function New({news, newLike}) {
   return (
     <div id='new'>
         <div className="container">
             <h2>New Gifts</h2>
             <div className="boxes">
                 {
-                    news.map((news, i)=>{
+                    news.map((news, index)=>{
                         return (
-                            <div key={i} className="box">
+                            <div key={index} className="box">
                             <div className="redCircle">
                             <img src={news.img} alt="" />
                             </div>
                             <div className="boxInfo">
                                 <h3>${news.price}</h3>
                                 <p>{news.name}</p>
-                                <button><i className='fa-regular fa-heart'></i></button>
+                                <button onClick={()=>newLike(index)}><i className={news.liked?'fa-solid fa-heart':'fa-regular fa-heart'}></i></button>
                             </div>
                         </div>
                         )

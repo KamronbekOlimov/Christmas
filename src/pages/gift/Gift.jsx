@@ -9,7 +9,7 @@ function Gift({gifts, giftLike}) {
           {gifts.map((gift, index) => {
             return (
               <div key={index} className="card">
-                <button onClick={()=>giftLike(index)} className="heart"><i className='fa-regular fa-heart'></i></button>
+                <button onClick={()=>giftLike(index)} className="heart"><i className={gift.liked?'fa-solid fa-heart':'fa-regular fa-heart'}></i></button>
                 <img className="desktop" src={gift.imgDesk} alt="" />
                 <img className="mobile" src={gift.imgMbl} alt="" />
                 <h3>${gift.price}</h3>
