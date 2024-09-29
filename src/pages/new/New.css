@@ -19,8 +19,8 @@
 .boxes{
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
 }
 .box{
   padding: 15px;
@@ -32,6 +32,13 @@
   overflow: hidden;
   row-gap: 30px;
   text-align: center;
+}
+.boxes .nextBtn{
+  background-color: transparent;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  color: #DC3845;
 }
 .body.dark .box{
   background-color: #2F2223;
@@ -95,30 +102,17 @@
 .tfr span{
   border-radius: 50%;
   cursor: pointer;
-}
-.tfr span:nth-child(1){
-  background-color: #DC3845;
-  width: 9px;
-  height: 9px;
-}
-.tfr span:nth-child(2){
-  width: 7px;
-  height: 7px;
-  background-color: #5D565680;
-}
-.tfr span:nth-child(3){
   width: 5px;
   height: 5px;
   background-color: #5D565680;
 }
-.tfr span:nth-child(4){
-  width: 3px;
-  height: 3px;
-  background-color: #5D565680;
+.tfr span.active{
+  background-color: #DC3845;
+  width: 7px;
+  height: 7px;
 }
 @media (max-width: 400px){
   .boxes{
     justify-content: center;
-    row-gap: 30px;
   }
 }
