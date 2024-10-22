@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import "./Navbar.css";
-function Navbar({ setMode, moon, menu, changeMenu, activeMenu, menuExit }) {
+function Navbar({ toggleMode, moon, menu, changeMenu, activeMenu, menuExit }) {
   return (
     <nav>
       <div className="container">
@@ -24,7 +24,7 @@ function Navbar({ setMode, moon, menu, changeMenu, activeMenu, menuExit }) {
           <li>
             <NavLink to={"/contact"}>Contact</NavLink>
           </li>
-          <button onClick={() => setMode()}>
+          <button onClick={() => toggleMode()}>
             <img src={moon} alt="" />
           </button>
           <button onClick={()=>changeMenu()} className="menubtn">

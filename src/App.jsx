@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import Celebrate from "./pages/celebrate/Celebrate";
 import Contact from "./pages/contact/Contact";
@@ -8,6 +8,7 @@ import New from "./pages/new/New";
 import Home from "./pages/home/Home";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Navbar from "./components/navbar/Navbar";
+
 function App() {
   const [gifts, setGifts] = useState([
     {
@@ -15,7 +16,7 @@ function App() {
       imgMbl: "/gingerBreadMobile.png",
       price: 15,
       name: "Gingerbread",
-      liked: false, 
+      liked: false,
       id: Math.floor(Math.random() * 9999),
     },
     {
@@ -23,7 +24,7 @@ function App() {
       imgMbl: "/stickMobile.png",
       price: 12,
       name: "Candy Stick",
-      liked: false, 
+      liked: false,
       id: Math.floor(Math.random() * 9999),
     },
     {
@@ -31,7 +32,7 @@ function App() {
       imgMbl: "/treeMobile.png",
       price: 48,
       name: "Christmas Tree",
-      liked: false, 
+      liked: false,
       id: Math.floor(Math.random() * 9999),
     },
     {
@@ -39,12 +40,11 @@ function App() {
       imgMbl: "/snowmanMobile.png",
       price: 35,
       name: "Snowman",
-      liked: false, 
+      liked: false,
       id: Math.floor(Math.random() * 9999),
     },
   ]);
-  const [likeGifts, setLikeGifts] = useState([])
-  const [likeNew, setLikeNew] = useState([])
+
   const [news, setNews] = useState([
     {
       img: "/christmasWreath.png",
@@ -75,46 +75,62 @@ function App() {
       liked: false,
     },
   ]);
+
   const [moon, setMoon] = useState("/moon.svg");
   const [menu, setMenu] = useState("/menu.svg");
   const [changeMode, setChangeMode] = useState(true);
   const [activeMenu, setActiveMenu] = useState(true);
   const [menuExit, setMenuExit] = useState("/xmark.svg");
-  const setMode = () => {
-    setChangeMode(!changeMode);
-    if (changeMode == true) {
-      setMoon("/sun.svg");
-      setMenu("/darkMenu.svg");
-      setMenuExit("/xmarkDark.svg");
+  useEffect(() => {
+    const savedMode = localStorage.getItem('mode');
+    if (savedMode === 'light') {
+      setDarkMode(false);
     } else {
-      setMoon("/moon.svg");
-      setMenu("/menu.svg");
-      setMenuExit("/xmark.svg");
+      setDarkMode(true);
     }
+  }, []);
+  const setDarkMode = (isDark) => {
+    setChangeMode(isDark);
+    setMoon(isDark ? "/moon.svg" : "/sun.svg");
+    setMenu(isDark ? "/menu.svg" : "/darkMenu.svg");
+    setMenuExit(isDark ? "/xmark.svg" : "/xmarkDark.svg");
+    localStorage.setItem('mode', isDark ? 'dark' : 'light');
   };
-  const changeMenu = () => {
+
+  const toggleMode = () => {
+    setDarkMode(!changeMode);
+  };
+
+  const toggleMenu = () => {
     setActiveMenu(!activeMenu);
   };
-  const giftLike = (index) => {
-    const updateGifts = [...gifts]
-    updateGifts[index].liked = !updateGifts[index].liked
-    setGifts(updateGifts)
-  }
-  const newLike = (index) => {
-    const updateNews = [...news]
-    updateNews[index].liked = !updateNews[index].liked
-    setNews(updateNews)
-  }
+
+  const toggleGiftLike = (index) => {
+    const updatedGifts = [...gifts];
+    updatedGifts[index].liked = !updatedGifts[index].liked;
+    setGifts(updatedGifts);
+  };
+  const toggleNewLike = (index) => {
+    const updatedNews = [...news];
+    updatedNews[index].liked = !updatedNews[index].liked;
+    setNews(updatedNews);
+  };
   return (
     <div className={changeMode ? "body" : "body dark"}>
       <BrowserRouter>
-        <Navbar setMode={setMode} moon={moon} menu={menu} changeMenu={changeMenu} activeMenu={activeMenu}
-          menuExit={menuExit}/>
+        <Navbar
+          toggleMode={toggleMode}
+          moon={moon}
+          menu={menu}
+          changeMenu={toggleMenu}
+          activeMenu={activeMenu}
+          menuExit={menuExit}
+        />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/celebrate" element={<Celebrate />} />
-          <Route path="/gift" element={<Gift gifts={gifts} giftLike={giftLike}/>}/>
-          <Route path="/new" element={<New news={news} newLike={newLike}/>} />
+          <Route path="/gift" element={<Gift gifts={gifts} giftLike={toggleGiftLike} />} />
+          <Route path="/new" element={<New news={news} newLike={toggleNewLike} />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
         <Footer />

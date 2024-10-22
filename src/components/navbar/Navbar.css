@@ -94,6 +94,25 @@ nav .container {
   font-weight: 500;
   line-height: 24px;
   color: #282525;
+  position: relative;
+  padding: 0px 10px;
+}
+.links a.active::after{
+  width: 100%;
+}
+.links a::after{
+  position: absolute;
+  content: "";
+  background-color: #DC3845;
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: -5px;
+  border-radius: 4px;
+}
+.links a:hover::after{
+  width: 100%;
+  transition: all .3s ease;
 }
 .links a.active{
   color: #DC3845;

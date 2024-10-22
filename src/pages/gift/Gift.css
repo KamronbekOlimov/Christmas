@@ -1,7 +1,8 @@
-#gifts{
+#gifts {
     padding: 50px 0px;
 }
-#gifts .container h2{
+
+#gifts .container h2 {
     font-size: 24px;
     font-weight: 600;
     line-height: 36px;
@@ -9,50 +10,66 @@
     text-align: center;
     margin-bottom: 40px;
 }
-.body.dark #gifts .container h2{
+
+.body.dark #gifts .container h2 {
     color: #F3F2F2;
 }
-.cards{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
+
+.swiper {
+    width: 100%;
+    margin: 50px 0px !important;
+    background: transparent !important;
 }
-.card{
+
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
     padding: 25px;
     position: relative;
-    width: 230px;
-    height: 268px;
+    width: 230px !important;
+    height: 268px !important;
     background-color: #FFFFFF;
-    border-radius: 12px;
+    border-radius: 12px !important;
     box-shadow: 0px 0px 10px 3px #301D1E1A;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     row-gap: 5px;
 }
-.body.dark .card{
+
+.body.dark .swiper-slide {
     background-color: #2F2223;
 }
-.card h3{
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+}
+
+.swiper-slide h3 {
     font-size: 20px;
     font-weight: 600;
     line-height: 30px;
     color: #282525;
     margin-top: -15px;
 }
-.body.dark .card h3{
+
+.body.dark .swiper-slide h3 {
     color: #F3F2F2;
 }
-.card p{
+
+.swiper-slide p {
     font-size: 14px;
     font-weight: 500;
     line-height: 21px;
     color: #5D5656;
 }
-.body.dark .card p{
+
+.body.dark .swiper-slide p {
     color: #C2BDBD;
 }
-.card .heart{
+
+.swiper-slide .heart {
     position: absolute;
     background-color: transparent;
     border: none;
@@ -61,40 +78,49 @@
     cursor: pointer;
     font-size: 20px;
 }
-.card .heart .fa-heart{
+
+.swiper-slide .heart .fa-heart {
     color: #DC3845;
 }
-.mobile{
-    display: none;
+
+.mobile {
+    display: none !important;
 }
-@media(max-width:400px){
-    .cards{
-        row-gap: 30px;
-        justify-content: center;
-    }
-    .card{
+.swiper-button-next, .swiper-button-prev{
+    color: #DC3845 !important;
+}
+.swiper-pagination-bullet.swiper-pagination-bullet-active{
+    background-color: #DC3845 !important;
+}
+@media(max-width:400px) {
+    .swiper-slide {
         padding: 15px;
     }
-    .card .heart{
+
+    .swiper-slide .heart {
         top: 15px;
         right: 15px;
     }
-    .card h3{
+
+    .swiper-slide h3 {
         font-size: 16px;
         font-weight: 600;
         line-height: 24px;
         margin-top: -25px;
     }
-    .card p{
+
+    .swiper-slide p {
         font-size: 13px;
         font-weight: 500;
         line-height: 19px;
     }
-    .desktop{
-        display: none;
+
+    .desktop {
+        display: none !important;
     }
-    .mobile{
-        display: block;
+
+    .mobile {
+        display: block !important;
         margin-top: 10px;
     }
 }

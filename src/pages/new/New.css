@@ -52,12 +52,13 @@
   top: -70px;
   left: -10px;
   position: absolute;
-  z-index: 1;
+  z-index: -1;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .box .redCircle img{
+  width: 150px;
   margin-top: 70px;
 }
 .boxInfo{
@@ -93,26 +94,8 @@
 .box button .fa-heart{
   color: #FFFFFF;
 }
-#new .tfr{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
-.tfr span{
-  border-radius: 50%;
-  cursor: pointer;
-  width: 5px;
-  height: 5px;
-  background-color: #5D565680;
-}
-.tfr span.active{
-  background-color: #DC3845;
-  width: 7px;
-  height: 7px;
-}
-@media (max-width: 400px){
-  .boxes{
-    justify-content: center;
+@media(max-width: 400px){
+  .boxInfo{
+    margin-top: 200px;
   }
 }
